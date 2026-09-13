@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeME Time Capsule</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="has-custom-cursor">
+
+    <!-- Welcome Screen -->
+
+        <main class="screen active" id="welcomeScreen">
+
+        <div class="stars"></div>
+        <div class="stars stars-far"></div>
+
+        <div class="particles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="welcome-content">
+
+            <p class="small-title">WE MEDICAL ENGINEERS</p>
+
+            <h1>TIME<br>CAPSULE</h1>
+
+            <p class="subtitle">
+                A message from who you are today,
+                <br>
+                to who you will become tomorrow.
+            </p>
+
+            <button id="openCapsule">
+                OPEN THE CAPSULE
+            </button>
+
+            <p class="year">2026</p>
+
+        </div>
+
+        </main>
+
+    <!-- Cinematic transition flash -->
+    <div class="capsule-transition" id="capsuleTransition"></div>
+
+    <!-- Department Screen -->
+
+    <main class="screen" id="departmentScreen">
+
+        <div class="department-content">
+
+            <p class="small-title">THE PRESENT</p>
+
+            <h2>Which department are you from?</h2>
+
+            <p class="instruction">
+                Choose your department.
+            </p>
+
+            <div class="department-cards">
+
+                
+                <button class="department-card" data-department="BME">
+
+                    <span class="department-icon">♡</span>
+
+                    <span class="department-name">
+                        Biomedical Engineering
+                    </span>
+
+                    <span class="department-tagline">
+                        Where technology meets life.
+                    </span>
+
+                    <span class="department-short">
+                        BME
+                    </span>
+
+                </button>
+
+
+                <button class="department-card" data-department="RIS">
+
+                    <span class="department-icon">✦</span>
+
+                    <span class="department-name">
+                        Robotics & Intelligent Systems
+                    </span>
+
+                    <span class="department-tagline">
+                        Build what hasn't been imagined.
+                    </span>
+
+                    <span class="department-short">
+                        RIS
+                    </span>
+
+                </button>
+
+
+                <button class="department-card" data-department="CNS">
+
+                    <span class="department-icon">⌁</span>
+
+                    <span class="department-name">
+                        Computer Networks & Security
+                    </span>
+
+                    <span class="department-tagline">
+                        Shape the systems that connect us.
+                    </span>
+
+                    <span class="department-short">
+                        CNS
+                    </span>
+
+                </button>
+
+            </div>
+
+            <p class="selected-message" id="selectedMessage"></p>
+
+        </div>
+
+    </main>
+    <!-- Student Information Screen -->
+
+    <main class="screen" id="studentScreen">
+
+        <div class="student-content">
+
+            <p class="small-title">THE PERSON YOU ARE TODAY</p>
+
+            <h2>Before we begin...</h2>
+
+            <p class="instruction">
+                Tell us who this letter belongs to.
+            </p>
+
+            <div class="student-form">
+
+                <div class="form-group">
+                    <label for="studentName">YOUR NAME</label>
+
+                    <input
+                        type="text"
+                        id="studentName"
+                        placeholder="Enter your full name"
+                        autocomplete="name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="studentEmail">YOUR EMAIL</label>
+
+                    <input
+                        type="email"
+                        id="studentEmail"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                    >
+                </div>
+
+                <button id="continueStudent">
+                    CONTINUE
+                </button>
+
+                <p class="form-message" id="formMessage"></p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Graduation Year Screen -->
+
+    <main class="screen" id="yearScreen">
+
+        <div class="year-content">
+
+            <p class="small-title">THE FUTURE</p>
+
+            <h2>When do you graduate?</h2>
+
+            <p class="instruction">
+                Choose the year you will close this chapter.
+            </p>
+
+                        <div class="year-options">
+
+                <div class="year-line"></div>
+
+                <button class="year-card" data-year="2027">
+                    2027
+                </button>
+
+                <button class="year-card" data-year="2028">
+                    2028
+                </button>
+
+                <button class="year-card" data-year="2029">
+                    2029
+                </button>
+
+                <button class="year-card" data-year="2030">
+                    2030
+                </button>
+
+            </div>
+
+            <p class="selected-message" id="yearMessage"></p>
+
+        </div>
+
+    </main>
+<!-- Diary Screen -->
+
+
+<main class="screen" id="diaryScreen">
+
+    <div class="diary-content">
+
+        <p class="small-title">YOUR TIME CAPSULE</p>
+
+        <h2 id="diaryTitle">TO THE ENGINEER I'LL BECOME</h2>
+
+        <p class="diary-cohort" id="diaryCohort">
+            BME • CLASS OF 2028
+        </p>
+
+        <!-- Reflection card shown first -->
+        <div class="diary-intro" id="diaryIntro">
+
+            <p class="memory-label">
+                BEFORE YOU WRITE...
+            </p>
+
+            <p class="memory-question">
+                What do you want your future self to remember?
+            </p>
+
+            <p class="memory-message">
+                Whatever feels heavy right now, remember that you made it through.
+                The things that keep you awake tonight may one day feel smaller than
+                you ever imagined. Be patient with yourself. Keep going, even when
+                you cannot see the way forward. Trust that the person reading this
+                survived, grew, and became stronger.
+            </p>
+
+            <p class="memory-prompt">
+                Now, write something your future self deserves to hear.
+            </p>
+
+            <button id="continueToDiary">
+                I'M READY
+            </button>
+
+        </div>
+
+        <!-- The actual diary, hidden until the reflection card is dismissed -->
+        <div class="diary-writing-area" id="diaryWritingArea">
+
+            <div class="diary-motes">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="diary-stars">
+                <span class="star star-1">✦</span>
+                <span class="star star-2">✧</span>
+                <span class="star star-3">✦</span>
+                <span class="star star-4">✧</span>
+            </div>
+
+            <div class="diary-paper">
+
+                <div class="diary-glow"></div>
+
+                <div class="diary-corner corner-top-left">
+                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5 C 25 8, 35 20, 40 40 C 44 55, 38 65, 50 78 C 60 88, 70 85, 85 95"
+                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                        <ellipse cx="22" cy="14" rx="6" ry="3" transform="rotate(-30 22 14)" fill="currentColor" opacity="0.7"/>
+                        <ellipse cx="38" cy="34" rx="5" ry="2.6" transform="rotate(20 38 34)" fill="currentColor" opacity="0.6"/>
+                        <ellipse cx="42" cy="58" rx="5.5" ry="2.8" transform="rotate(-15 42 58)" fill="currentColor" opacity="0.65"/>
+                        <ellipse cx="62" cy="80" rx="5" ry="2.6" transform="rotate(25 62 80)" fill="currentColor" opacity="0.6"/>
+                        <ellipse cx="78" cy="90" rx="4.5" ry="2.4" transform="rotate(-10 78 90)" fill="currentColor" opacity="0.55"/>
+                    </svg>
+                </div>
+
+                <div class="diary-corner corner-bottom-right">
+                    <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M115 115 C 95 112, 85 100, 80 80 C 76 65, 82 55, 70 42 C 60 32, 50 35, 35 25"
+                            stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                        <ellipse cx="98" cy="106" rx="6" ry="3" transform="rotate(-30 98 106)" fill="currentColor" opacity="0.7"/>
+                        <ellipse cx="82" cy="86" rx="5" ry="2.6" transform="rotate(20 82 86)" fill="currentColor" opacity="0.6"/>
+                        <ellipse cx="78" cy="62" rx="5.5" ry="2.8" transform="rotate(-15 78 62)" fill="currentColor" opacity="0.65"/>
+                        <ellipse cx="58" cy="40" rx="5" ry="2.6" transform="rotate(25 58 40)" fill="currentColor" opacity="0.6"/>
+                        <ellipse cx="42" cy="30" rx="4.5" ry="2.4" transform="rotate(-10 42 30)" fill="currentColor" opacity="0.55"/>
+                    </svg>
+                </div>
+
+                <p class="diary-date" id="diaryDate"></p>
+
+                <p class="dear-line">
+                    Dear future me,
+                </p>
+
+                <textarea
+                    id="letterText"
+                    placeholder="Write something you hope you'll remember..."
+                    maxlength="3000"
+                ></textarea>
+
+                <div class="diary-footer-row">
+                    <p class="word-hint">
+                        Take your time. There's no perfect way to write this.
+                    </p>
+
+                    <p class="word-counter" id="wordCounter">0 words</p>
+                </div>
+
+                <button id="sealLetter">
+                    SEAL MY LETTER
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+<!-- Capsule Reveal Screen -->
+
+<main class="screen" id="revealScreen">
+
+    <div class="reveal-content" id="revealPrompt">
+
+        <p class="small-title">YOUR TIME HAS COME</p>
+
+        <h2>You wrote this when you<br>were still becoming.</h2>
+
+        <p class="reveal-subtitle" id="revealCohort">
+            BME • CLASS OF 2028
+        </p>
+
+        <button id="openMyCapsule">
+            OPEN MY TIME CAPSULE
+        </button>
+
+    </div>
+
+    <div class="reveal-letter" id="revealLetter">
+
+        <p class="small-title">YOUR WORDS, PRESERVED</p>
+
+        <div class="diary-paper">
+
+            <p class="dear-line">
+                Dear future me,
+            </p>
+
+            <p class="revealed-letter-text" id="revealedLetterText"></p>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Locked Screen -->
+
+<main class="screen" id="revealScreen">
+
+    <div class="locked-content">
+
+        <p class="small-title">YOUR MESSAGE HAS BEEN SEALED</p>
+
+        <div class="capsule-icon">
+            ◇
+        </div>
+
+        <h2>TIME CAPSULE<br>LOCKED</h2>
+
+        <p class="locked-message">
+            What you wrote today will wait for you.
+            <br>
+            One day, you'll open this and meet
+            the person you used to be.
+        </p>
+
+        <p class="graduation-note" id="graduationNote">
+            OPENING ON YOUR GRADUATION DAY
+        </p>
+
+    </div>
+
+</main>
+    <!-- Custom cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="custom-cursor-trail" id="customCursorTrail"></div>
+
+
+   <!-- Robot Companiona -->
+
+<div class="robot-companion" id="robotCompanion">
+
+    <div class="robot-glow"></div>
+
+    <!-- Robot body -->
+    <img
+        src="robot.png"
+        alt="WeME Time Capsule Robot"
+        id="robotImage"
+    >
+
+    <!-- Robot face -->
+    <div class="robot-face" id="robotFace">
+
+        <div class="robot-eyes">
+
+            <div class="robot-eye left-eye">
+                <div class="robot-pupil"></div>
+            </div>
+
+            <div class="robot-eye right-eye">
+                <div class="robot-pupil"></div>
+            </div>
+
+        </div>
+
+        <div class="robot-mouth"></div>
+
+    </div>
+
+    <!-- Speech bubble -->
+    <div class="robot-message" id="robotMessage">
+        Ready? ✦
+    </div>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>

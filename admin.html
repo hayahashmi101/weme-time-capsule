@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WeME Admin Vault</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Login Screen -->
+
+    <main class="screen active" id="adminLoginScreen">
+
+        <div class="admin-login-content">
+
+            <p class="small-title">WEME TIME CAPSULE</p>
+
+            <h2>ADMIN VAULT</h2>
+
+            <p class="instruction">
+                Enter your admin email to receive a secure sign-in link.
+            </p>
+
+            <div class="admin-login-form">
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Enter your admin email"
+                    autocomplete="email"
+                >
+
+                <button id="sendAdminLink">
+                    SEND SIGN-IN LINK
+                </button>
+
+                <p class="admin-message" id="adminMessage"></p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Checking Access Screen -->
+
+    <main class="screen" id="adminCheckingScreen">
+
+        <div class="admin-login-content">
+            <p class="instruction">Verifying access...</p>
+        </div>
+
+    </main>
+
+
+    <!-- Access Denied Screen -->
+
+    <main class="screen" id="adminDeniedScreen">
+
+        <div class="admin-login-content">
+
+            <p class="small-title">ACCESS RESTRICTED</p>
+
+            <h2>NOT AUTHORIZED</h2>
+
+            <p class="instruction">
+                This account does not have admin access.
+            </p>
+
+        </div>
+
+    </main>
+
+
+      <!-- Dashboard -->
+
+        <!-- Dashboard -->
+
+    <main class="screen" id="adminDashboardScreen">
+
+        <div class="admin-dashboard-content">
+
+            <p class="small-title">WEME TIME CAPSULE</p>
+            <h2>ADMIN VAULT</h2>
+
+            <div class="cohort-summary" id="cohortSummary">
+                <!-- Cohort cards get inserted here by JavaScript -->
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Cohort Detail (individual students) -->
+
+    <main class="screen" id="adminCohortDetailScreen">
+
+        <div class="admin-dashboard-content">
+
+            <button id="backToDashboard" class="back-link">← BACK TO VAULT</button>
+
+            <p class="small-title" id="cohortDetailTitle">BME • CLASS OF 2028</p>
+            <h2>STUDENTS</h2>
+
+            <div class="student-list" id="studentList">
+                <!-- Student rows get inserted here by JavaScript -->
+            </div>
+
+        </div>
+
+    </main>
+
+
+      <!-- Letter viewing modal -->
+    <div class="letter-modal" id="letterModal">
+        <div class="letter-modal-content">
+            <button id="closeLetterModal" class="letter-modal-close">✕</button>
+
+            <p class="small-title" id="letterModalName">STUDENT NAME</p>
+            <p class="instruction" id="letterModalMeta"></p>
+
+            <div class="diary-paper">
+                <p class="dear-line">Dear future me,</p>
+                <p class="revealed-letter-text" id="letterModalText"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+
+</body>
+</html>
